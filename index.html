@@ -29,41 +29,53 @@
 
 </head>
 <body>
-    <div class="container"><br><h1><strong>Heat Index Checker</strong></h1>
+    <div class="container"><br>
+    <h1><strong>Heat Index Checker</strong></h1>
+    
+    <input type="number" id="tempInput" placeholder="Enter Temperature" class="form-control mb-2">
     
     <button class="btn btn-info" onclick="checkHI()">Check temp</button><br>
-    </div>
+</div>
 
-    <script>
-    function checkHI(){
-    var temp = document.getElementById("").value;
-        var humid;
-        var HeatIndex;
-        var status = "";
+<script>
+function checkHI(){
+    // 1. Get the value from the new input field and turn it into a number
+    var temp = parseFloat(document.getElementById("tempInput").value);
+    
+    // 2. For this drill, we will treat the temp as the HeatIndex
+    var HeatIndex = temp; 
+    var status = "";
+
+    // 3. Check if the user actually entered a number
+    if (isNaN(HeatIndex)) {
+        alert("Please enter a valid number");
+        return;
+    }
 
     switch (true){
-        case (HeatIndex <= 27 ): //compare
+        case (HeatIndex <= 27):
             status = "Comfortable / Cool";
             break;
-        case (HeatIndex >= 28 && HeatIndex <= 32): //compare
+        case (HeatIndex >= 28 && HeatIndex <= 32):
             status = "Warm";
             break;
-        case (HeatIndex >= 33 && HeatIndex <= 37): //compare
+        case (HeatIndex >= 33 && HeatIndex <= 37):
             status = "Hot";
             break;
-        case (HeatIndex >= 38 && HeatIndex <= 41): //compare
+        case (HeatIndex >= 38 && HeatIndex <= 41):
             status = "Very Hot / Caution";
             break;
-
         case (HeatIndex >= 42):
-            message = "Extreme Heat / Danger";
-
+            status = "Extreme Heat / Danger";
+            break;
         default:
-            status = "Temperature could not be found";
+            status = "Temperature could not be processed";
     }
-    alert("Heat Index" + HeatIndex.toFixed(1) + "/n" + status);
+
+    // 4. Fixed the newline character (it's \n, not /n)
+    alert("Heat Index: " + HeatIndex.toFixed(1) + "\nStatus: " + status);
 }
-    </script>
+</script>
 
    <br>
 <div class="container2">
