@@ -53,7 +53,7 @@ function checkHI(){
     }
 
     switch (true){
-        case (HeatIndex <= 27):
+        case (HeatIndex <= 27 && HeatIndex >= 20):
             status = "Comfortable / Cool";
             break;
         case (HeatIndex >= 28 && HeatIndex <= 32):
