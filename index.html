@@ -43,16 +43,16 @@
 
     switch (true){
         case (HeatIndex <= 27 ): //compare
-            message = "Comfortable / Cool";
+            status = "Comfortable / Cool";
             break;
         case (HeatIndex >= 28 && HeatIndex <= 32): //compare
-            message = "Warm";
+            status = "Warm";
             break;
         case (HeatIndex >= 33 && HeatIndex <= 37): //compare
-            message = "Hot";
+            status = "Hot";
             break;
         case (HeatIndex >= 38 && HeatIndex <= 41): //compare
-            message = "Very Hot / Caution";
+            status = "Very Hot / Caution";
             break;
 
         case (HeatIndex >= 42):
