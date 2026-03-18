@@ -5,8 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Q4 Drill2</title>
+
+    <style>
+        body{
+            background-image:url();
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+
+        .container{
+            background-color:rgb(50, 9, 137, 0.5);
+            border-radius:20px;
+            justify-content:center;
+        }
+    </style>
+
 </head>
 <body>
+    <div class="container"><br><h1><strong>Heat Index Checker</strong></h1>
     
+    <button class="btn btn-info" onclick="checkHI()">Check temp</button><br>
+    </div>
+
+    <script>
+    function checkHI(){
+    var temp = document.getElementById("").value;
+        var humid;
+        var HeatIndex;
+        var status = "";
+
+    switch (true){
+        case (HeatIndex <= 27 ): //compare
+            message = "Comfortable / Cool";
+            break;
+        case (HeatIndex >= 28 && HeatIndex <= 32): //compare
+            message = "Warm";
+            break;
+        case (HeatIndex >= 33 && HeatIndex <= 37): //compare
+            message = "Hot";
+            break;
+        case (HeatIndex >= 38 && HeatIndex <= 41): //compare
+            message = "Very Hot / Caution";
+            break;
+
+        case (HeatIndex >= 42):
+            message = "Extreme Heat / Danger";
+
+        default:
+            status = "";
+    }
+    alert("Heat Index!:" + HeatIndex.toFixed(1) + "/n" + status);
+}
+    </script>
 </body>
 </html>
